@@ -6,7 +6,7 @@ app.use('/code', express.static('code'));
 
 // setup a 'route' to listen on the default url path
 app.get("/", (req, res) => {
-    res.render('index');
+    res.send('index');
 });
 
 // setup http server to listen on HTTP_PORT
