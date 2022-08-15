@@ -6,8 +6,8 @@ app.use(express.static('code'));
 
 // setup a 'route' to listen on the default url path
 app.get("/", (req, res) => {
-    res.sendFile(__dirname+"/index.html");
-    res.sendFile(__dirname+"/style.css");
+    res.sendFile(__dirname+"/bday message");
+
 });
 
 // setup http server to listen on HTTP_PORT
