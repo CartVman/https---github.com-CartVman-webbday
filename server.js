@@ -1,11 +1,13 @@
-const server = require('server');
-const { get, post } = server.router;
-const { render, redirect } = server.reply;
+const HTTP_PORT = process.env.PORT || 8080;
+const express = require("express");
+const app = express();
 
-server(
-  get('/', () => render('index.html')),
-  post('/', ctx => {
-    console.log(ctx.data);
-    return redirect('/');
-  })
-);
+app.use(express.static('code'));
+
+// setup a 'route' to listen on the default url path
+app.get("/", (req, res) => {
+    res.send('hello');
+});
+
+// setup http server to listen on HTTP_PORT
+app.listen(HTTP_PORT);
